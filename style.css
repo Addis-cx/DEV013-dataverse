@@ -1,0 +1,388 @@
+:root {
+    --soft-blue: #48AEF0;
+    --pastel-blue: #94B8D1;
+    --sky-blue: #B6DFF9;
+    --grey: #D2E9F9;
+    --soft-grey: #F9F8F8;
+    --dark-grey: #2C2C2C;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Cabin Condensed', 'Merriweather', 'sans-serif';
+    background-color: var(--sky-blue);
+    position: relative;
+}
+.header {
+    display: flex;
+    background-color: var(--soft-blue);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.logo {
+    width: 27vw;
+    height: 26vh;
+}
+.title {
+    margin: 0.8rem 25rem 0 0;
+}
+h1 {
+    display: contents;
+    color: var(--black);
+    font-family: sans-serif;
+    font-size: 2.7em;
+}
+.movie-search {
+    background-color: var(--grey);
+    border: var(--pastel-blue);
+    width: 26vw;
+    height: 6.5vh;
+    font-size: 0.93em;
+    padding-left: 1.3rem;
+    border-radius: 9999rem;
+    margin: 3.5rem 2rem 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.superButtons{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0 0 0;
+}
+[data-testid="select-filter"] {
+    width: 12.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: Merriweather;
+    background-color: var(--soft-grey);
+    color: var(--dark-grey);
+    border: var(--grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+[data-testid="select-filter"]:hover {
+    background-color: var(--soft-blue);
+    border: var(--pastel-blue);
+    color: var(--white);
+}
+.cleanerButton {
+    width: 12.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: Merriweather;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--soft-blue);
+    border-color: var(--pastel-blue);
+    color: var(--white);
+    border: var(--grey);
+}
+.cleanerButton:hover {
+    background-color: var(--soft-grey);
+    border: var(--grey);
+    color: var(--dark-grey);
+}
+.statsButton {
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--soft-blue);
+    border-color: var(--pastel-blue);
+    color: var(--white);
+    border: var(--grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.statsButton > img {
+    width: 3rem;
+    height: auto;
+}
+.statsButton:hover {
+    background-color: var(--soft-grey);
+    border: var(--grey);
+    color: var(--dark-grey);
+}
+.statsWindow {
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 20rem;
+    border-radius: 3rem;
+    background-color: var(--white)
+}
+h3 {
+    font-size: 1.5rem;
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-top: 2rem;
+}
+p {
+    font-family: Merriweather;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0.5rem;
+}
+.closeStats {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: Merriweather;
+    background-color: var(--sky-blue);
+    color: var(--dark-grey);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 0.7rem;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+}
+.statsFondo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.noVisual {
+    display: none;
+}
+.visual {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    padding: 1rem;
+    margin: 1rem;
+    width: 18rem;
+    height: 28rem;
+    border-radius: 0.9rem;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    text-align: center;
+    font-family: Merriweather;
+    font-size: 0.85rem;
+}
+.visual > img {
+    width: 14rem;
+    height: 20rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+}
+li {
+    list-style: none;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin: 1rem 0 0.8rem 0;
+}
+.cardsBtn {
+    width: 11rem;
+    height: 2rem;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    font-family: Merriweather;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border: 0.1rem solid var(--soft-blue);
+}
+.cardsBtn:hover {
+    background-color: var(--soft-blue);
+    border: var(--grey);
+    color: var(--white);
+}
+.windowModal {
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46rem;
+    height: 35rem;
+    border-radius: 3rem;
+    background-color: var(--soft-blue);
+}
+h2 {
+    font-size: 2.5rem;
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    margin: 0.6rem 0 0 0;
+    text-shadow: -1.4px 0 var(--dark-grey), 0 1.4px var(--dark-grey),
+    1.4px 0 var(--dark-grey), 0 -1.4px var(--dark-grey);
+    color: var(--white);
+}
+.modalCard {
+    width: 44rem;
+    height: 27rem;
+    border-radius: 2rem;
+    margin: 0.6rem 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--white);
+}
+.closeWindow {
+    font-size: 1rem;
+    font-family: Merriweather;
+    background-color: var(--soft-grey);
+    color: var(--dark-grey);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 0.7rem;
+    width: fit-content;
+}
+.closeWindow:hover {
+    background-color: var(--sky-blue);
+    border: var(--grey);
+    color: var(--black);
+} 
+.card {
+    font-family: Merriweather;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0.5rem;
+}
+.modalCard > img {
+    width: 20rem;
+    height: 25rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+}
+
+.modalFondo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.hiden {
+    display: none;
+}
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    font-size: 1rem;
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 600px) {
+    .logo {
+        width: 25vw;
+        height: 17vh;
+    }
+    .title {
+        margin: 1rem 0 0 0;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    .movie-search {
+        margin: 1.6rem 0 0 9rem;
+        height: 1.7rem;
+        font-size: 0.7em;
+    }
+    .superButtons {
+        margin: 0.5rem 0 0 0;
+    }
+    [data-testid="select-filter"] {
+        width: 7rem;
+	    height: 2.1rem;
+	    font-size: 0.7em;
+    }
+    .cleanerButton {
+        width: 7rem;
+	    height: 2.1rem;
+	    font-size: 0.7em;
+    }
+    .statsButton {
+        width: 5rem;
+	    height: 2.1rem;
+    }
+    .statsButton > img {
+        width: 2.5rem;
+        height: auto;
+    }
+    .statsWindow {
+        width: 15rem;
+        height: 10rem;
+    }
+    .visual {
+        margin: 0.4rem;
+        width: 11rem;
+        height: 20rem;
+        padding: 0.5rem;
+        box-shadow: 6px 6px 1px 0.5px rgba(0, 0, 255, .2);
+        font-size: 0.6rem;
+    }
+    .visual > img {
+        width: 9rem;
+        height: 14rem;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.425);
+    }
+    ul {
+        margin: 0.5rem 0 0.4rem 0;
+    }
+    .cardsBtn {
+        width: 6rem;
+        height: 1.5rem;
+        font-size: 1em;
+    }
+    .windowModal {
+       	width: 30rem;
+	    height: 21.5rem;
+    }
+    .closeWindow {
+        font-size: 0.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .modalCard {
+        width: 28rem;
+	    height: 16.2rem;
+	    margin: 0.3rem 1rem;
+    }
+    .card {
+        font-size: 0.7rem;
+        margin: 0.05rem;
+    }
+    .modalCard > img {
+        width: 10rem;
+        height: 15rem;
+        margin: 0.5rem;
+    }
+    footer {
+        font-size: 0.5rem;
+    }
+}
